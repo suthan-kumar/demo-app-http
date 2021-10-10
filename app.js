@@ -12,8 +12,10 @@ app.use(express.json());
 
 app.use("/student", StudentRoutes);
 
-app.listen(3000, () => {
-  console.log("Express running in port 3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log("Express running in port", PORT);
 });
 
 mongoose.connect(DB_URL, (err) => {
